@@ -10,10 +10,12 @@ require('dotenv').config({path: './config/.env'})
 connectDB();
 
 app.use(cors());
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirName + '/index.html')
-});
+app.use('/', homeRoutes)
+app.use('auth', authRoutes)
+
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running.`)
