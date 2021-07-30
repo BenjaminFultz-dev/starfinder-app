@@ -1,0 +1,95 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+  /* BASE STYLES
+  /*******************************************/
+html {
+  font-size: 10px;
+}
+
+body {
+  background: rgb(32, 82, 119);
+  background: radial-gradient(
+    circle,
+    rgba(32, 82, 119, 1) 0%,
+    rgba(93, 191, 237, 1) 50%,
+    rgba(8, 54, 110, 1) 100%
+  );
+}
+
+/******************************************
+  /* LAYOUT
+  /*******************************************/
+header {
+}
+
+main {
+  background: rgb(32, 82, 119);
+  background: radial-gradient(
+    circle,
+    rgba(32, 82, 119, 1) 0%,
+    rgba(93, 191, 237, 1) 50%,
+    rgba(8, 54, 110, 1) 100%
+  );
+  color: #231722;
+  min-height: 100vh;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 21em;
+}
+
+.submit {
+  background-color: rgba(8, 54, 110, 1);
+  padding: 2rem 4rem;
+  color: rgba(239, 126, 42, 255);
+  border-radius: 4rem;
+  margin-bottom: 1em;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+footer {
+}
+
+/******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+/* @media screen and (max-width: 800px) {
+      label {
+          margin-top: 1.5em;
+          font-size: 2rem;
+      }
+      input {
+          font-size: 1.2rem;
+      }
+      .input-wrapper {
+          margin-top: 1em;
+      }
+  } */
