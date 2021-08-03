@@ -1,8 +1,13 @@
 const Skill = require('../models/Skill');
 
 module.exports = {
-    getSkill: (req, res) => {
-        res.render('skill.ejs')
+    getSkills: async (req, res) => {
+        try {
+            const skills = await Skill.find()
+            res.render('skill.ejs', { skills: skills })
+        } catch (err) {
+            console.log(err)
+        }
     },
     createSkill: async (req, res) => {
         let skill;
@@ -15,6 +20,7 @@ module.exports = {
                 armorCheckPenalty: req.body.armorCheckPenalty
             })
             console.log(req)
+            res.redirect('/skill')
         } catch (err) {
             console.log(err)
         }

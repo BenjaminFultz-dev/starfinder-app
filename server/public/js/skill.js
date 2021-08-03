@@ -18,9 +18,10 @@ async function createSkill(e) {
         })
         const data = await response.json()
         console.log(data)
-        // location.reload()
+        createForm.reset()
     } catch(err) {
         console.log(err)
     }
+    location.reload()
 }
 

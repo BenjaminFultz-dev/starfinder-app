@@ -12,23 +12,63 @@
         <h1>Starfinder Finder</h1>
         <p>This Finder is for personal use only, using only information from books we have purchased. See <a href="#">OGL License</a> for more information.</p>
         <p>Enter your search paramaters in the corresponding search field for ease of use in-game, OR if skill is missing, fill out the form to add it to the database.</p>
-        <div class="input-wrapper">
             <label for="skill">Search for Skill by Name:</label>
-            <input type="text" id="skill" name="skill" value="Skill">
+            <input type="text" id="skill" name="skill">
             <button type="submit" class="submit">Search Skill</button>
-        </div>
+        <h1>Skills</h1>
+        <ul>
+            <% skills.forEach( el => { %>
+                <li class="skill" data-id='<%=el._id%>'>
+                    <div class="column">
+                        <div class="row">
+                            <span class="skills-label">Skill:</span>
+                            <span><%= el.skill %></span>
+                        </div>
+                        <div class="row">
+                            <span class="skills-label">Ability:</span> 
+                            <span><%= el.ability %></span>
+                        </div>
+                        <div class="row">
+                            <span class="skills-label">Description:</span>
+                            <span><%= el.description %></span>
+                        </div>
+                        <div class="row">
+                            <span class="skills-label">Trained Only?</span> 
+                            <span><%= el.trainedOnly %></span>
+                        </div>
+                        <div class="row">
+                            <span class="skills-label">Armor Check Penalty?</span> 
+                            <span><%= el.armorCheckPenalty %></span>
+                        </div>
+                    </div>
+                </li>
+           <% }) %>
+        </ul>
+        <h2>Create a Skill</h2>
         <form id="skillForm">
-            <label for="skillName">Skill:</label>
-            <input type="text" id="skillName" name="skillName">
-            <label for="skillAbility">Ability:</label>
-            <input type="text" id="skillAbility" name="skillAbility">
-            <label for="skillDescription">Description:</label>
-            <input type="text" id="skillDescription" name="skillDescription">
-            <label for="trainedOnly">Trained Only?</label>
-            <input type="checkbox" id="trainedOnly" name="trainedOnly">
-            <label for="armorCheckPenalty">Armor Check Penalty?</label>
-            <input type="checkbox" id="armorCheckPenalty" name="armorCheckPenalty">
-            <button>Submit</button>
+            <div class="form-column">
+                <div class="form-row">
+                    <label for="skillName">Skill:</label>
+                    <input type="text" id="skillName" name="skillName">
+                </div>
+                <div class="form-row">
+                    <label for="skillAbility">Ability:</label>
+                    <input type="text" id="skillAbility" name="skillAbility">
+                </div>
+                <div class="form-row">
+                    <label for="skillDescription">Description:</label>
+                    <input type="text" id="skillDescription" name="skillDescription">
+                </div>
+                <div class="form-row">
+                    <label for="trainedOnly">Trained Only?</label>
+                    <input type="checkbox" id="trainedOnly" name="trainedOnly">
+                </div>
+                <div class="form-row">
+                    <label for="armorCheckPenalty">Armor Check Penalty?</label>
+                    <input type="checkbox" id="armorCheckPenalty" name="armorCheckPenalty">
+                </div>
+                    <button class="submit">Submit</button>
+            </div>
         </form>
     </main>
     <script src="/js/skill.js"></script> 
