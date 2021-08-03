@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/server/public/css/skill.css">
+    <link rel="stylesheet" href="/css/skill.css">
     <title>Skills</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
             <input type="text" id="skill" name="skill" value="Skill">
             <button type="submit" class="submit">Search Skill</button>
         </div>
-        <form>
+        <form id="skillForm">
             <label for="skillName">Skill:</label>
             <input type="text" id="skillName" name="skillName">
             <label for="skillAbility">Ability:</label>
@@ -25,16 +25,12 @@
             <label for="skillDescription">Description:</label>
             <input type="text" id="skillDescription" name="skillDescription">
             <label for="trainedOnly">Trained Only?</label>
-            <input type="radio" id="true" name="trainedOnly" value="True">
-            <label for="true">True</label>
-            <input type="radio" id="false" name="trainedOnly" value="False">
-            <label for="false">False</label>
+            <input type="checkbox" id="trainedOnly" name="trainedOnly">
             <label for="armorCheckPenalty">Armor Check Penalty?</label>
-            <input type="radio" id="true" name="armorCheckPenalty" value="True">
-            <label for="true">True</label>
-            <input type="radio" id="false" name="armorCheckPenalty" value="False">
-            <label for="false">False</label>
+            <input type="checkbox" id="armorCheckPenalty" name="armorCheckPenalty">
+            <button>Submit</button>
         </form>
-    </main> 
+    </main>
+    <script src="/js/skill.js"></script> 
 </body>
 </html>
