@@ -10,9 +10,8 @@ module.exports = {
         }
     },
     createSkill: async (req, res) => {
-        let skill;
         try {
-            skill = await Skill.create({
+            await Skill.create({
                 skill: req.body.skillName,
                 ability: req.body.skillAbility,
                 description: req.body.skillDescription,
@@ -20,10 +19,9 @@ module.exports = {
                 armorCheckPenalty: req.body.armorCheckPenalty
             })
             console.log(req)
-            res.redirect('/skill')
+            res.json('Skill created.')
         } catch (err) {
             console.log(err)
         }
-        res.json(skill)
     }
 }

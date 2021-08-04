@@ -9,25 +9,57 @@
 </head>
 <body>
     <main>
-        <h1>Starfinder Finder</h1>
-        <p>This Finder is for personal use only, using only information from books we have purchased. See <a href="#">OGL License</a> for more information.</p>
         <p>Enter your search paramaters in the corresponding search field for ease of use in-game, OR if feat is missing, fill out the form to add it to the database.</p>
-        <div class="input-wrapper">
             <label for="feat">Search for Feat by Name:</label>
             <input type="text" id="feat" name="feat" value="Feat">
             <button type="submit" class="submit">Search Feat</button>
-        </div>
+        <h1>Feats</h1>
+        <ul>
+            <% feats.forEach( el => { %>
+                <li class="feat" data-id='<%=el._id%>'>
+                    <div class="column">
+                        <div class="row">
+                            <span class="feats-label">Feat:</span>
+                            <span><%= el.feat %></span>
+                        </div>
+                        <div class="row">
+                            <span class="feats-label">Ability:</span> 
+                            <span><%= el.prerequisite %></span>
+                        </div>
+                        <div class="row">
+                            <span class="feats-label">Description:</span>
+                            <span><%= el.description %></span>
+                        </div>
+                        <div class="row">
+                            <span class="feats-label">Combat Feat:</span> 
+                            <span><%= el.combatFeat %></span>
+                        </div>
+                    </div>
+                </li>
+           <% }) %>
+        </ul>
         <form id="featForm">
-            <label for="featName">Feat:</label>
-            <input type="text" id="featName" name="featName">
-            <label for="prerequisite">Prerequisites:</label>
-            <input type="text" id="featPrerequisite" name="featPrerequisite">
-            <label for="featDescription">Description:</label>
-            <input type="text" id="featDescription" name="featDescription">
-            <label for="combatFeat">Combat Feat?</label>
-            <input type="checkbox" id="combatFeat" name="combatFeat">
-            <button class="submit">Submit</button>
+            <div class="form-column">
+                <div class="form-row">
+                    <label for="featName">Feat:</label>
+                    <input type="text" id="featName" name="featName">
+                </div>
+                <div class="form-row">
+                    <label for="featPrerequisite">Prerequisites:</label>
+                    <input type="text" id="featPrerequisite" name="featPrerequisite">
+                </div>
+                <div class="form-row">
+                    <label for="featDescription">Description:</label>
+                    <input type="text" id="featDescription" name="featDescription">
+                </div>
+                <div class="form-row">
+                    <label for="combatFeat">Combat Feat?</label>
+                    <input type="checkbox" id="combatFeat" name="combatFeat">
+                </div>
+                    <button class="submit">Submit</button>
+            </div>
         </form>
     </main> 
+    <script src="/js/feat.js"></script> 
 </body>
 </html>
