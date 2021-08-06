@@ -2,12 +2,18 @@ const Feat = require('../models/Feat');
 
 module.exports = {
     getFeats: async (req, res) => {
+        let feats;
         try {
-            const feats = await Feat.find()
-            res.render('feat.ejs', { feats: feats })
+           if (req.query.findFeat) {
+            feats = await Feat.find({ feat: req.query.findFeat })
+            
+           } else {
+            feats = await Feat.find() 
+           }
         } catch (err) {
-            console.log(err)
-        }
+            console.error(err)
+        } 
+        res.render('feat.ejs', { feats: feats })
     },
     createFeat: async (req, res) => {
         try {
