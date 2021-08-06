@@ -113,7 +113,7 @@ h2 {
   margin-top: 6em;
 }
 
-form {
+#skillForm {
   display: flex;
   align-items: center;
   justify-content: center;

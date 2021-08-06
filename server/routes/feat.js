@@ -6,4 +6,4 @@ router.get('/', featController.getFeats);
 
 router.post('/createFeat', featController.createFeat);
 
-module.exports = router
+module.exports = router;

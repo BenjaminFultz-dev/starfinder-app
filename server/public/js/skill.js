@@ -1,4 +1,7 @@
-const createForm = document.querySelector("#skillForm");
+const createForm = document.querySelector('#skillForm');
+const findSkill = document.querySelector('#findSkillSubmit');
+
+findSkill.addEventListener('click', findSkillByName);
 
 createForm.addEventListener('submit', createSkill);
 
@@ -9,11 +12,11 @@ async function createSkill(e) {
             method: 'post',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                skillName: document.querySelector("#skillName").value,
-                skillAbility: document.querySelector("#skillAbility").value,
-                skillDescription: document.querySelector("#skillDescription").value,
-                trainedOnly: document.querySelector("#trainedOnly").checked,
-                armorCheckPenalty: document.querySelector("#armorCheckPenalty").checked      
+                skillName: document.querySelector('#skillName').value,
+                skillAbility: document.querySelector('#skillAbility').value,
+                skillDescription: document.querySelector('#skillDescription').value,
+                trainedOnly: document.querySelector('#trainedOnly').checked,
+                armorCheckPenalty: document.querySelector('#armorCheckPenalty').checked      
             })
         })
         const data = await response.json()

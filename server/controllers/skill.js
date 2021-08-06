@@ -2,12 +2,18 @@ const Skill = require('../models/Skill');
 
 module.exports = {
     getSkills: async (req, res) => {
+        let skills;
         try {
-            const skills = await Skill.find()
-            res.render('skill.ejs', { skills: skills })
+           if (req.query.findSkill) {
+            skills = await Skill.find({ skill: req.query.findSkill })
+            
+           } else {
+            skills = await Skill.find() 
+           }
         } catch (err) {
-            console.log(err)
-        }
+            console.error(err)
+        } 
+        res.render('skill.ejs', { skills: skills })
     },
     createSkill: async (req, res) => {
         try {
@@ -23,5 +29,6 @@ module.exports = {
         } catch (err) {
             console.log(err)
         }
-    }
+    },
+   
 }

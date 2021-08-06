@@ -10,9 +10,11 @@
 <body>
     <main>
         <p>Enter your search paramaters in the corresponding search field for ease of use in-game, OR if skill is missing, fill out the form to add it to the database.</p>
-            <label for="skill">Search for Skill by Name:</label>
-            <input type="text" id="skill" name="skill">
-            <button type="submit" class="submit">Search Skill</button>
+           <form method="GET">
+                <label for="findSkill">Search for Skill by Name:</label>
+                <input type="text" id="findSkill" name="findSkill">
+                <input type="submit">
+           </form>
         <h1>Skills</h1>
         <ul>
             <% skills.forEach( el => { %>
