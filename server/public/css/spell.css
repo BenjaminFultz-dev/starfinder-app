@@ -1,0 +1,127 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+    /* BASE STYLES
+    /*******************************************/
+html {
+  font-size: 10px;
+}
+
+body {
+  background: rgb(32, 82, 119);
+  background: radial-gradient(
+    circle,
+    rgba(32, 82, 119, 1) 0%,
+    rgba(93, 191, 237, 1) 50%,
+    rgba(8, 54, 110, 1) 100%
+  );
+  text-align: center;
+}
+
+/******************************************
+    /* LAYOUT
+    /*******************************************/
+header {
+}
+
+main {
+  background: rgb(32, 82, 119);
+  background: radial-gradient(
+    circle,
+    rgba(32, 82, 119, 1) 0%,
+    rgba(93, 191, 237, 1) 50%,
+    rgba(8, 54, 110, 1) 100%
+  );
+  color: #231722;
+  min-height: 100vh;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+label {
+  margin-top: 1em;
+  font-size: 2rem;
+  color: #2aefe1;
+  font-weight: bold;
+}
+
+input {
+  margin: 0.8em;
+  padding: 0.5rem;
+  background-color: rgba(239, 126, 42, 255);
+  color: rgba(8, 54, 110, 1);
+  font-weight: bold;
+}
+
+.submit {
+  background-color: rgba(8, 54, 110, 1);
+  padding: 0.7rem;
+  color: rgba(239, 126, 42, 255);
+  border-radius: 4rem;
+  margin-bottom: 1em;
+}
+
+h1 {
+  text-align: left;
+  padding: 0 3rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 2em;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.row {
+  flex: 60%;
+  max-width: 60%;
+  margin: 0.5rem;
+}
+
+.spells-label {
+  font-weight: bold;
+}
+
+h2 {
+  margin-top: 6em;
+}
+
+#spellForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+}
+
+/******************************************
+    /* ADDITIONAL STYLES
+    /*******************************************/

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/spell.css">
+    <title>Spells</title>
+</head>
+<body>
+    <main>
+        <p>Enter your search paramaters in the corresponding search field for ease of use in-game, OR if spell is missing, fill out the form to add it to the database.</p>
+           <form method="GET">
+                <label for="findSpell">Search for Spell by Name:</label>
+                <input type="text" id="findSpell" name="findSpell">
+                <input type="submit">
+           </form>
+        <h1>Spells</h1>
+        <ul>
+            <% spells.forEach( el => { %>
+                <li class="spell" data-id='<%=el._id%>'>
+                    <div class="column">
+                        <div class="row">
+                            <span class="spells-label">Spell:</span>
+                            <span><%= el.spell %></span>
+                        </div>
+                        <div class="row">
+                            <span class="spells-label">Class:</span> 
+                            <span><%= el.class %></span>
+                        </div>
+                        <div class="row">
+                            <span class="spells-label">Level:</span>
+                            <span><%= el.level %></span>
+                        </div>
+                        <div class="row">
+                            <span class="spells-label">Description:</span> 
+                            <span><%= el.description %></span>
+                        </div>
+                        <div class="row">
+                            <span class="spells-label">Notes:</span> 
+                            <span><%= el.notes %></span>
+                        </div>
+                    </div>
+                </li>
+           <% }) %>
+        </ul>
+        <h2>Create a Spell</h2>
+        <form id="spellForm">
+            <div class="form-column">
+                <div class="form-row">
+                    <label for="spellName">Skill:</label>
+                    <input type="text" id="spellName" name="spellName">
+                </div>
+                <div class="form-row">
+                    <label for="spellClass">Class:</label>
+                    <input type="text" id="spellClass" name="spellClass">
+                </div>
+                <div class="form-row">
+                    <label for="spellLevel">Level:</label>
+                    <input type="text" id="spellLevel" name="spellLevel">
+                </div>
+                <div class="form-row">
+                    <label for="spellDescription">Description:</label>
+                    <input type="text" id="spellDescription" name="spellDescription">
+                </div>
+                <div class="form-row">
+                    <label for="spellNotes">Notes:</label>
+                    <input type="text" id="spellNotes" name="spellNotes">
+                </div>
+                    <button class="submit">Submit</button>
+            </div>
+        </form>
+    </main>
+    <script src="/js/spell.js"></script> 
+</body>
+</html>

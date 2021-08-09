@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/theme.css">
+    <title>Themes</title>
+</head>
+<body>
+    <main>
+        <p>Enter your search paramaters in the corresponding search field for ease of use in-game, OR if theme is missing, fill out the form to add it to the database.</p>
+           <form method="GET">
+                <label for="findTheme">Search for Theme by Name:</label>
+                <input type="text" id="findTheme" name="findTheme">
+                <input type="submit">
+           </form>
+        <h1>Themes</h1>
+        <ul>
+            <% themes.forEach( el => { %>
+                <li class="theme" data-id='<%=el._id%>'>
+                    <div class="column">
+                        <div class="row">
+                            <span class="themes-label">Theme:</span>
+                            <span><%= el.theme %></span>
+                        </div>
+                        <div class="row">
+                            <span class="themes-label">Ability:</span> 
+                            <span><%= el.ability %></span>
+                        </div>
+                        <div class="row">
+                            <span class="themes-label">Description:</span>
+                            <span><%= el.description %></span>
+                        </div>
+                        <div class="row">
+                            <span class="themes-label">First Level:</span> 
+                            <span><%= el.firstLevel %></span>
+                        </div>
+                        <div class="row">
+                            <span class="themes-label">Sixth Level:</span> 
+                            <span><%= el.sixthLevel %></span>
+                        </div>
+                        <div class="row">
+                            <span class="themes-label">Twelfth Level:</span> 
+                            <span><%= el.twelfthLevel %></span>
+                        </div>
+                        <div class="row">
+                            <span class="themes-label">Eighteenth Level:</span> 
+                            <span><%= el.eighteenthLevel %></span>
+                        </div>
+                    </div>
+                </li>
+           <% }) %>
+        </ul>
+        <h2>Create a Theme</h2>
+        <form id="themeForm">
+            <div class="form-column">
+                <div class="form-row">
+                    <label for="themeName">Theme:</label>
+                    <input type="text" id="themeName" name="themeName">
+                </div>
+                <div class="form-row">
+                    <label for="themeAbility">Ability:</label>
+                    <input type="text" id="themeAbility" name="themeAbility">
+                </div>
+                <div class="form-row">
+                    <label for="themeDescription">Description:</label>
+                    <input type="text" id="themeDescription" name="themeDescription">
+                </div>
+                <div class="form-row">
+                    <label for="firstLevel">First Level:</label>
+                    <input type="text" id="firstLevel" name="firstLevel">
+                </div>
+                <div class="form-row">
+                    <label for="sixthLevel">Sixth Level:</label>
+                    <input type="text" id="sixthLevel" name="sixthLevel">
+                </div>
+                <div class="form-row">
+                    <label for="twelfthLevel">Twelfth Level:</label>
+                    <input type="text" id="twelfthLevel" name="twelfthLevel">
+                </div>
+                <div class="form-row">
+                    <label for="eighteenthLevel">Eighteenth Level:</label>
+                    <input type="text" id="eighteenthLevel" name="eighteenthLevel">
+                </div>
+                    <button class="submit">Submit</button>
+            </div>
+        </form>
+    </main>
+    <script src="/js/theme.js"></script> 
+</body>
+</html>
