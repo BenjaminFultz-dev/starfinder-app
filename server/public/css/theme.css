@@ -18,30 +18,36 @@
 }
 
 /******************************************
-    /* BASE STYLES
-    /*******************************************/
+  /* BASE STYLES
+  /*******************************************/
 html {
   font-size: 10px;
 }
 
 body {
-  background: rgb(32, 82, 119);
+  /* background: rgb(32, 82, 119);
   background: radial-gradient(
     circle,
     rgba(32, 82, 119, 1) 0%,
     rgba(93, 191, 237, 1) 50%,
     rgba(8, 54, 110, 1) 100%
   );
+  text-align: center; */
+  background: black;
+  color: rgba(93, 191, 237, 1);
+  min-height: 100vh;
   text-align: center;
+  font-size: 1.8rem;
+  font-family: "Play", sans-serif;
 }
 
 /******************************************
-    /* LAYOUT
-    /*******************************************/
+  /* LAYOUT
+  /*******************************************/
 header {
 }
 
-main {
+/* main {
   background: rgb(32, 82, 119);
   background: radial-gradient(
     circle,
@@ -53,34 +59,66 @@ main {
   min-height: 100vh;
   text-align: center;
   font-size: 1.6rem;
+} */
+/* main {
+  background: black;
+  color: rgba(93, 191, 237, 1);
+  min-height: 100vh;
+  text-align: center;
+  font-size: 1.8rem;
+} */
+p {
+  color: gold;
+  padding: 4rem;
+}
+
+.form-wrapper {
+  border-top: 0.3rem solid red;
+}
+
+form {
+  padding: 2rem;
+  margin: 4em auto;
 }
 
 label {
-  margin-top: 1em;
   font-size: 2rem;
-  color: #2aefe1;
   font-weight: bold;
 }
 
 input {
   margin: 0.8em;
   padding: 0.5rem;
-  background-color: rgba(239, 126, 42, 255);
-  color: rgba(8, 54, 110, 1);
+  color: black;
   font-weight: bold;
+  background-color: whitesmoke;
 }
 
 .submit {
-  background-color: rgba(8, 54, 110, 1);
-  padding: 0.7rem;
-  color: rgba(239, 126, 42, 255);
-  border-radius: 4rem;
-  margin-bottom: 1em;
+  background-color: rgba(93, 191, 237, 1);
+  padding: 1rem 2rem;
+  color: black;
+  border-radius: 3rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.submit:hover {
+  background-color: gold;
+  font-size: 1.5rem;
+}
+
+.submit:active {
+  font-size: 1.4rem;
 }
 
 h1 {
   text-align: left;
-  padding: 0 3rem;
+  padding: 5rem 3rem 1rem 3rem;
+  color: gold;
+  border-top: 0.3rem solid red;
+  margin-top: 3em;
 }
 
 ul {
@@ -90,6 +128,9 @@ ul {
 
 li {
   margin: 2em;
+  padding: 4rem 0;
+  color: whitesmoke;
+  border-bottom: 0.3rem solid rgba(93, 191, 237, 1);
 }
 
 .column {
@@ -107,10 +148,14 @@ li {
 
 .themes-label {
   font-weight: bold;
+  font-size: 2rem;
+  padding-right: 0.5rem;
+  color: rgba(93, 191, 237, 1);
 }
 
 h2 {
   margin-top: 6em;
+  color: gold;
 }
 
 #themeForm {
@@ -119,9 +164,17 @@ h2 {
   justify-content: center;
 }
 
+#themeForm button {
+  margin-top: 2em;
+}
+
+.bottom {
+  border-bottom: 0.3rem solid red;
+}
+
 footer {
 }
 
 /******************************************
-    /* ADDITIONAL STYLES
-    /*******************************************/
+  /* ADDITIONAL STYLES
+  /*******************************************/

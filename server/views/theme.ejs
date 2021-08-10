@@ -5,16 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/theme.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <title>Themes</title>
 </head>
 <body>
-    <main>
+
         <p>Enter your search paramaters in the corresponding search field for ease of use in-game, OR if theme is missing, fill out the form to add it to the database.</p>
-           <form method="GET">
+        <div class="form-wrapper">   
+        <form method="GET">
                 <label for="findTheme">Search for Theme by Name:</label>
                 <input type="text" id="findTheme" name="findTheme">
-                <input type="submit">
+                <input type="submit" class="submit">
            </form>
+        </div>
         <h1>Themes</h1>
         <ul>
             <% themes.forEach( el => { %>
@@ -52,6 +56,7 @@
                 </li>
            <% }) %>
         </ul>
+        <div class="form-wrapper bottom">
         <h2>Create a Theme</h2>
         <form id="themeForm">
             <div class="form-column">
@@ -86,7 +91,8 @@
                     <button class="submit">Submit</button>
             </div>
         </form>
-    </main>
+    </div>
+
     <script src="/js/theme.js"></script> 
 </body>
 </html>

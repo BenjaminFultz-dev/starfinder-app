@@ -25,13 +25,14 @@ html {
 }
 
 body {
-  background: rgb(32, 82, 119);
+  background: black;
+  /* background: rgb(32, 82, 119);
   background: radial-gradient(
     circle,
     rgba(32, 82, 119, 1) 0%,
     rgba(93, 191, 237, 1) 50%,
     rgba(8, 54, 110, 1) 100%
-  );
+  ); */
 }
 
 /******************************************
@@ -40,7 +41,7 @@ body {
 header {
 }
 
-main {
+/* main {
   background: rgb(32, 82, 119);
   background: radial-gradient(
     circle,
@@ -52,27 +53,60 @@ main {
   min-height: 100vh;
   text-align: center;
   font-size: 1.6rem;
+} */
+
+main {
+  background: black;
+  color: rgba(93, 191, 237, 1);
+  min-height: 100vh;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+p a {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+}
+
+p a:hover {
+  color: gold;
+}
+
+p a:active {
+  color: red;
+  font-size: 1.5rem;
 }
 
 .hidden {
   display: none;
 }
 
-.input-wrapper {
+.link-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 21em;
 }
 
-.submit {
-  background-color: rgba(8, 54, 110, 1);
+.link {
+  background-color: rgba(93, 191, 237, 1);
   padding: 2rem 4rem;
-  color: rgba(239, 126, 42, 255);
-  border-radius: 4rem;
+  color: black;
+  border-radius: 3rem;
   margin-bottom: 1em;
   font-weight: bold;
   font-size: 2rem;
+  text-decoration: none;
+}
+
+.link:hover {
+  background-color: gold;
+  font-size: 2.1rem;
+}
+
+.link:active {
+  font-size: 1.9rem;
 }
 
 footer {

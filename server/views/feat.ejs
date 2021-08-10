@@ -5,16 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/feat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <title>Feats</title>
 </head>
 <body>
-    <main>
+    
         <p>Enter your search paramaters in the corresponding search field for ease of use in-game, OR if feat is missing, fill out the form to add it to the database.</p>
+        <div class="form-wrapper">
         <form method="GET">
             <label for="findFeat">Search for Feat by Name:</label>
             <input type="text" id="findFeat" name="findFeat">
-            <input type="submit">
+            <input type="submit" class="submit">
        </form>
+    </div>
         <h1>Feats</h1>
         <ul>
             <% feats.forEach( el => { %>
@@ -40,6 +45,8 @@
                 </li>
            <% }) %>
         </ul>
+        <div class="form-wrapper bottom">
+            <h2>Create a Feat</h2>
         <form id="featForm">
             <div class="form-column">
                 <div class="form-row">
@@ -60,8 +67,8 @@
                 </div>
                     <button class="submit">Submit</button>
             </div>
-        </form>
-    </main> 
+        </div>
+        </form> 
     <script src="/js/feat.js"></script> 
 </body>
 </html>
