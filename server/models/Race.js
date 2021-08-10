@@ -10,7 +10,7 @@ const RaceSchema = new mongoose.Schema({
         required: true,
     },
     hitPoints: {
-        type: String,
+        type: Number,
         required: true,
     },
     traitOne: {
@@ -23,11 +23,11 @@ const RaceSchema = new mongoose.Schema({
     },
     traitThree: {
         type: String,
-        required: true,
+        required: false,
     },
     traitFour: {
         type: String,
-        required: true,
+        required: false,
     },
     alternateAbilityAdjustmentOne: {
         type: String,
@@ -39,15 +39,15 @@ const RaceSchema = new mongoose.Schema({
     },
     alternateAbilityAdjustmentThree: {
         type: String,
-        required: true,
+        required: false,
     },
     alternateAbilityAdjustmentFour: {
         type: String,
-        required: true,
+        required: false,
     },
     alternateAbilityAdjustmentFive: {
         type: String,
-        required: true,
+        required: false,
     },
     alternateTraitOne: {
         type: String,
@@ -59,35 +59,35 @@ const RaceSchema = new mongoose.Schema({
     },
     alternateTraitThree: {
         type: String,
-        required: true,
+        required: false,
     },
     alternateTraitFour: {
         type: String,
-        required: true,
+        required: false,
     },
     alternateTraitFive: {
         type: String,
-        required: true,
+        required: false,
     },
     alternateTraitSix: {
         type: String,
-        required: true,
+        required: false,
     },
     alternateTraitSeven: {
         type: String,
-        required: true,
+        required: false,
     },
     alternateTraitEight: {
         type: String,
-        required: true,
+        required: false,
     },
     alternateTraitNine: {
         type: String,
-        required: true,
+        required: false,
     },
     alternateTraitTen: {
         type: String,
-        required: true,
+        required: false,
     }
 });
 
