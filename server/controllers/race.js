@@ -21,7 +21,9 @@ module.exports = {
                 race: req.body.raceName,
                 abilityModifiers: req.body.abilityModifiers,
                 hitPoints: req.body.hitPoints,
-                traits: req.body.traits
+                traits: req.body.traits,
+                alternateAbilityAdjustments: req.body.alternateAbilityAdjustments,
+                alternateTraits: req.body.alternateTraits
             })
             console.log(req)
             res.json('Race created.')
