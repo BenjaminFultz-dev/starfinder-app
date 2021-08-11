@@ -37,80 +37,17 @@
                             <span><%= el.hitPoints %></span>
                         </div>
                         <div class="row">
-                            <span class="races-label">Racial Trait:</span> 
-                            <span><%= el.traitOne %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Racial Trait:</span> 
-                            <span><%= el.traitTwo %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Racial Trait:</span> 
-                            <span><%= el.traitThree %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Racial Trait:</span> 
-                            <span><%= el.traitFour %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Alternate Ability Adjustment:</span> 
-                            <span><%= el.alternateAbilityAdjustmentOne %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Alternate Ability Adjustment:</span> 
-                            <span><%= el.alternateAbilityAdjustmentTwo %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Alternate Ability Adjustment:</span> 
-                            <span><%= el.alternateAbilityAdjustmentThree %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Alternate Ability Adjustment:</span> 
-                            <span><%= el.alternateAbilityAdjustmentFour %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Alternate Ability Adjustment:</span> 
-                            <span><%= el.alternateAbilityAdjustmentFive %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Alternate Racial Trait:</span> 
-                            <span><%= el.alternateTraitOne %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Alternate Racial Trait:</span> 
-                            <span><%= el.alternateTraitTwo %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Alternate Racial Trait:</span> 
-                            <span><%= el.alternateTraitThree %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Alternate Racial Trait:</span> 
-                            <span><%= el.alternateTraitFour %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Alternate Racial Trait:</span> 
-                            <span><%= el.alternateTraitFive %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Alternate Racial Trait:</span> 
-                            <span><%= el.alternateTraitSix %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Alternate Racial Trait:</span> 
-                            <span><%= el.alternateTraitSeven %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Alternate Racial Trait:</span> 
-                            <span><%= el.alternateTraitEight %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Alternate Racial Trait:</span> 
-                            <span><%= el.alternateTraitNine %></span>
-                        </div>
-                        <div class="row">
-                            <span class="races-label">Alternate Racial Trait:</span> 
-                            <span><%= el.alternateTraitTen %></span>
+                            <h3>Traits</h3>
+                            <% el.traits.forEach( trait => { %>
+                                <div class="row">
+                                <span class="trait-name races-label">Name:</span>
+                                <span><%= trait.name %></span>
+                            </div>
+                            <div class="row">
+                                <span class="trait-description races-label">Description:</span>
+                                <span><%= trait.description %></span>
+                            </div>
+                                <% }) %>                    
                         </div>
                     </div>
                 </li>
@@ -130,88 +67,30 @@
                 </div>
                 <div class="form-row">
                     <label for="hitPoints">Hit Points:</label>
-                    <input type="text" id="hitPoints" name="hitPoints">
+                    <input type="number" id="hitPoints" name="hitPoints">
                 </div>
-                <div class="form-row">
-                    <label for="traitOne">Racial Trait:</label>
-                    <input type="text" id="traitOne" name="traitOne">
+
+
+
+
+                <div>
+                    <h3>Add Traits</h3>
+                    <ul id="traitList">
+                
+                    </ul>
+                    <input type="text" id="traitName"><br>
+                    <textarea id="traitDescription" cols="30" rows="4"></textarea>
+                    <button type="button" id="addTrait">Add Trait</button>
                 </div>
-                <div class="form-row">
-                    <label for="traitTwo">Racial Trait:</label>
-                    <input type="text" id="traitTwo" name="traitTwo">
-                </div>
-                <div class="form-row">
-                    <label for="traitThree">Racial Trait:</label>
-                    <input type="text" id="traitThree" name="traitThree">
-                </div>
-                <div class="form-row">
-                    <label for="traitFour">Racial Trait:</label>
-                    <input type="text" id="traitFour" name="traitFour">
-                </div>
-                <div class="form-row">
-                    <label for="alternateAbilityAdjustmentOne">Alternate Ability Adjustment:</label>
-                    <input type="text" id="alternateAbilityAdjustmentOne" name="alternateAbilityAdjustmentOne">
-                </div>
-                <div class="form-row">
-                    <label for="alternateAbilityAdjustmentTwo">Alternate Ability Adjustment:</label>
-                    <input type="text" id="alternateAbilityAdjustmentTwo" name="alternateAbilityAdjustmentTwo">
-                </div>
-                <div class="form-row">
-                    <label for="alternateAbilityAdjustmentThree">Alternate Ability Adjustment:</label>
-                    <input type="text" id="alternateAbilityAdjustmentThree" name="alternateAbilityAdjustmentThree">
-                </div>
-                <div class="form-row">
-                    <label for="alternateAbilityAdjustmentFour">Alternate Ability Adjustment:</label>
-                    <input type="text" id="alternateAbilityAdjustmentFour" name="alternateAbilityAdjustmentFour">
-                </div>
-                <div class="form-row">
-                    <label for="alternateAbilityAdjustmentFive">Alternate Ability Adjustment:</label>
-                    <input type="text" id="alternateAbilityAdjustmentFive" name="alternateAbilityAdjustmentFive">
-                </div>
-                <div class="form-row">
-                    <label for="alternateTraitOne">Alternate Racial Trait:</label>
-                    <input type="text" id="alternateTraitOne" name="alternateTraitOne">
-                </div>
-                <div class="form-row">
-                    <label for="alternateTraitTwo">Alternate Racial Trait:</label>
-                    <input type="text" id="alternateTraitTwo" name="alternateTraitTwo">
-                </div>
-                <div class="form-row">
-                    <label for="alternateTraitThree">Alternate Racial Trait:</label>
-                    <input type="text" id="alternateTraitThree" name="alternateTraitThree">
-                </div>
-                <div class="form-row">
-                    <label for="alternateTraitFour">Alternate Racial Trait:</label>
-                    <input type="text" id="alternateTraitFour" name="alternateTraitFour">
-                </div>
-                <div class="form-row">
-                    <label for="alternateTraitFive">Alternate Racial Trait:</label>
-                    <input type="text" id="alternateTraitFive" name="alternateTraitFive">
-                </div>
-                <div class="form-row">
-                    <label for="alternateTraitSix">Alternate Racial Trait:</label>
-                    <input type="text" id="alternateTraitSix" name="alternateTraitSix">
-                </div>
-                <div class="form-row">
-                    <label for="alternateTraitSeven">Alternate Racial Trait:</label>
-                    <input type="text" id="alternateTraitSeven" name="alternateTraitSeven">
-                </div>
-                <div class="form-row">
-                    <label for="alternateTraitEight">Alternate Racial Trait:</label>
-                    <input type="text" id="alternateTraitEight" name="alternateTraitEight">
-                </div>
-                <div class="form-row">
-                    <label for="alternateTraitNine">Alternate Racial Trait:</label>
-                    <input type="text" id="alternateTraitNine" name="alternateTraitNine">
-                </div>
-                <div class="form-row">
-                    <label for="alternateTraitTen">Alternate Racial Trait:</label>
-                    <input type="text" id="alternateTraitTen" name="alternateTraitTen">
-                </div>
+              
+
+
+
+
                     <button class="submit">Submit</button>
             </div>
+        </div>
         </form>
-    </div>
     <script src="/js/race.js"></script> 
 </body>
 </html>

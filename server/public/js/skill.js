@@ -1,7 +1,4 @@
 const createForm = document.querySelector('#skillForm');
-const findSkill = document.querySelector('#findSkillSubmit');
-
-findSkill.addEventListener('click', findSkillByName);
 
 createForm.addEventListener('submit', createSkill);
 
