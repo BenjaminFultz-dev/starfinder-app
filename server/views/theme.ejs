@@ -10,6 +10,19 @@
     <title>Themes</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Theme</a></li>
+                <li><a href="#">Race</a></li>
+                <li><a href="#">Class</a></li>
+                <li><a href="#">Feat</a></li>
+                <li><a href="#">Skill</a></li>
+                <li><a href="#">Spell</a></li>
+            </ul>
+        </nav>
+    </header>
 
         <p>Enter your search paramaters in the corresponding search field for ease of use in-game, OR if theme is missing, fill out the form to add it to the database.</p>
         <div class="form-wrapper">   
@@ -37,20 +50,40 @@
                             <span><%= el.description %></span>
                         </div>
                         <div class="row">
-                            <span class="themes-label">First Level:</span> 
-                            <span><%= el.firstLevel %></span>
+                            <h3>1st Level</h3>
+                            <span class="themes-label">Name:</span> 
+                            <span><%= el.firstLevel.name %></span>
                         </div>
                         <div class="row">
-                            <span class="themes-label">Sixth Level:</span> 
-                            <span><%= el.sixthLevel %></span>
+                            <span class="themes-label">Description:</span>
+                            <span><%= el.firstLevel.description %></span>
                         </div>
                         <div class="row">
-                            <span class="themes-label">Twelfth Level:</span> 
-                            <span><%= el.twelfthLevel %></span>
+                            <h3>6th Level</h3>
+                            <span class="themes-label">Name:</span> 
+                            <span><%= el.sixthLevel.name %></span>
                         </div>
                         <div class="row">
-                            <span class="themes-label">Eighteenth Level:</span> 
-                            <span><%= el.eighteenthLevel %></span>
+                            <span class="themes-label">Description:</span>
+                            <span><%= el.sixthLevel.description %></span>
+                        </div>
+                        <div class="row">
+                            <h3>12th Level</h3>
+                            <span class="themes-label">Name:</span> 
+                            <span><%= el.twelfthLevel.name %></span>
+                        </div>
+                        <div class="row">
+                            <span class="themes-label">Description:</span>
+                            <span><%= el.twelfthLevel.description %></span>
+                        </div>
+                        <div class="row">
+                            <h3>18th Level</h3>
+                            <span class="themes-label">Name:</span> 
+                            <span><%= el.eighteenthLevel.name %></span>
+                        </div>
+                        <div class="row">
+                            <span class="themes-label">Description:</span>
+                            <span><%= el.eighteenthLevel.description %></span>
                         </div>
                     </div>
                 </li>
@@ -73,20 +106,40 @@
                     <input type="text" id="themeDescription" name="themeDescription">
                 </div>
                 <div class="form-row">
-                    <label for="firstLevel">First Level:</label>
-                    <input type="text" id="firstLevel" name="firstLevel">
+                    <h3>1st Level</h3>
+                    <label for="firstLevelName">Name:</label>
+                    <input type="text" id="firstLevelName">
                 </div>
                 <div class="form-row">
-                    <label for="sixthLevel">Sixth Level:</label>
-                    <input type="text" id="sixthLevel" name="sixthLevel">
+                    <label for="firstLevelDescription">Description:</label>
+                    <textarea id="firstLevelDescription" cols="30" rows="4"></textarea>
                 </div>
                 <div class="form-row">
-                    <label for="twelfthLevel">Twelfth Level:</label>
-                    <input type="text" id="twelfthLevel" name="twelfthLevel">
+                    <h3>6th Level</h3>
+                    <label for="sixthLevelName">Name:</label>
+                    <input type="text" id="sixthLevelName">
                 </div>
                 <div class="form-row">
-                    <label for="eighteenthLevel">Eighteenth Level:</label>
-                    <input type="text" id="eighteenthLevel" name="eighteenthLevel">
+                    <label for="sixthLevelDescription">Description:</label>
+                    <textarea id="sixthLevelDescription" cols="30" rows="4"></textarea>
+                </div>
+                <div class="form-row">
+                    <h3>12th Level</h3>
+                    <label for="twelfthLevelName">Name:</label>
+                    <input type="text" id="twelfthLevelName">
+                </div>
+                <div class="form-row">
+                    <label for="twelfthLevelDescription">Description:</label>
+                    <textarea id="twelfthLevelDescription" cols="30" rows="4"></textarea>
+                </div>
+                <div class="form-row">
+                    <h3>18th Level</h3>
+                    <label for="eighteenthLevelName">Name:</label>
+                    <input type="text" id="eighteenthLevelName">
+                </div>
+                <div class="form-row">
+                    <label for="eighteenthLevelDescription">Description:</label>
+                    <textarea id="eighteenthLevelDescription" cols="30" rows="4"></textarea>
                 </div>
                     <button class="submit">Submit</button>
             </div>

@@ -56,13 +56,11 @@ form {
 label {
   font-size: 2rem;
   font-weight: bold;
-  padding: 0 4.5rem;
-  margin-top: 1em;
 }
 
 input,
 textarea {
-  margin: 0.5em;
+  margin: 0.3em;
   padding: 0.5rem;
   color: black;
   font-weight: bold;
@@ -148,6 +146,8 @@ h3 {
 #raceForm label {
   display: block;
   text-align: left;
+  padding: 0 4.5rem;
+  margin-top: 1em;
 }
 
 #raceForm input {

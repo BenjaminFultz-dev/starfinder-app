@@ -14,20 +14,20 @@ const ThemeSchema = new mongoose.Schema({
         required: true,
     },
     firstLevel: {
-        type: String,
-        required: true,
+        name: String,
+        description: String,
     },
     sixthLevel: {
-        type: String,
-        required: true,
+        name: String,
+        description: String,
     },
     twelfthLevel: {
-        type: String,
-        required: true,
+        name: String,
+        description: String,
     },
     eighteenthLevel: {
-        type: String,
-        required: true,
+        name: String,
+        description: String,
     }
 });
 
