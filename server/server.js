@@ -8,6 +8,7 @@ const featRoutes = require('./routes/feat');
 const themeRoutes = require('./routes/theme');
 const spellRoutes = require('./routes/spell');
 const raceRoutes = require('./routes/race');
+const classRoutes = require('./routes/class');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use('/feat', featRoutes);
 app.use('/theme', themeRoutes);
 app.use('/spell', spellRoutes);
 app.use('/race', raceRoutes);
+app.use('/class', classRoutes);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running.`)

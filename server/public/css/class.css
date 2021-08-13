@@ -18,8 +18,8 @@
 }
 
 /******************************************
-  /* BASE STYLES
-  /*******************************************/
+    /* BASE STYLES
+    /*******************************************/
 html {
   font-size: 10px;
 }
@@ -28,33 +28,33 @@ body {
   background: black;
   font-family: "Play", sans-serif;
   /* background: rgb(32, 82, 119);
-  background: radial-gradient(
-    circle,
-    rgba(32, 82, 119, 1) 0%,
-    rgba(93, 191, 237, 1) 50%,
-    rgba(8, 54, 110, 1) 100%
-  ); */
+    background: radial-gradient(
+      circle,
+      rgba(32, 82, 119, 1) 0%,
+      rgba(93, 191, 237, 1) 50%,
+      rgba(8, 54, 110, 1) 100%
+    ); */
 }
 
 /******************************************
-  /* LAYOUT
-  /*******************************************/
+    /* LAYOUT
+    /*******************************************/
 header {
 }
 
 /* main {
-  background: rgb(32, 82, 119);
-  background: radial-gradient(
-    circle,
-    rgba(32, 82, 119, 1) 0%,
-    rgba(93, 191, 237, 1) 50%,
-    rgba(8, 54, 110, 1) 100%
-  );
-  color: #231722;
-  min-height: 100vh;
-  text-align: center;
-  font-size: 1.6rem;
-} */
+    background: rgb(32, 82, 119);
+    background: radial-gradient(
+      circle,
+      rgba(32, 82, 119, 1) 0%,
+      rgba(93, 191, 237, 1) 50%,
+      rgba(8, 54, 110, 1) 100%
+    );
+    color: #231722;
+    min-height: 100vh;
+    text-align: center;
+    font-size: 1.6rem;
+  } */
 
 main {
   background: black;
@@ -114,17 +114,17 @@ footer {
 }
 
 /******************************************
-  /* ADDITIONAL STYLES
-  /*******************************************/
+    /* ADDITIONAL STYLES
+    /*******************************************/
 /* @media screen and (max-width: 800px) {
-      label {
-          margin-top: 1.5em;
-          font-size: 2rem;
-      }
-      input {
-          font-size: 1.2rem;
-      }
-      .input-wrapper {
-          margin-top: 1em;
-      }
-  } */
+        label {
+            margin-top: 1.5em;
+            font-size: 2rem;
+        }
+        input {
+            font-size: 1.2rem;
+        }
+        .input-wrapper {
+            margin-top: 1em;
+        }
+    } */
