@@ -12,10 +12,22 @@ async function createTheme(e) {
                 themeName: document.querySelector("#themeName").value,
                 themeAbility: document.querySelector("#themeAbility").value,
                 themeDescription: document.querySelector("#themeDescription").value,
-                firstLevel: document.querySelector("#firstLevel").value,
-                sixthLevel: document.querySelector("#sixthLevel").value,
-                twelfthLevel: document.querySelector("#twelfthLevel").value,
-                eighteenthLevel: document.querySelector("#eighteenthLevel").value   
+                firstLevel: {
+                    name: document.querySelector("#firstLevelName").value,
+                    description: document.querySelector("firstLevelDescription").value,
+                },
+                sixthLevel: {
+                    name: document.querySelector("#sixthLevelName").value,
+                    description: document.querySelector("sixthLevelDescription").value,
+                }, 
+                twelfthLevel: {
+                    name: document.querySelector("#twelfthLevelName").value,
+                    description: document.querySelector("twelfthLevelDescription").value,
+                },
+                eighteenthLevel: {
+                    name: document.querySelector("#eighteenthLevelName").value,
+                    description: document.querySelector("eighteenthLevelDescription").value,
+                }
             })
         })
         const data = await response.json()
