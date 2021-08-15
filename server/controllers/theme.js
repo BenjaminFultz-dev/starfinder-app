@@ -21,10 +21,22 @@ module.exports = {
                 theme: req.body.themeName,
                 ability: req.body.themeAbility,
                 description: req.body.themeDescription,
-                firstLevel: req.body.firstLevel,
-                sixthLevel: req.body.sixthLevel,
-                twelfthLevel: req.body.twelfthLevel,
-                eighteenthLevel: req.body.eighteenthLevel
+                firstLevel: {
+                    name: req.body.firstLevel.name,
+                    description: req.body.firstLevel.description,
+                },
+                sixthLevel: {
+                    name: req.body.sixthLevel.name,
+                    description: req.body.sixthLevel.description,
+                },
+                twelfthLevel: {
+                    name: req.body.twelfthLevel.name,
+                    description: req.body.twelfthLevel.description,
+                },
+                eighteenthLevel: {
+                    name: req.body.eighteenthLevel.name,
+                    description: req.body.eighteenthLevel.description,
+                }
             })
             console.log(req)
             res.json('Theme created.')

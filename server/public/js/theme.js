@@ -14,19 +14,19 @@ async function createTheme(e) {
                 themeDescription: document.querySelector("#themeDescription").value,
                 firstLevel: {
                     name: document.querySelector("#firstLevelName").value,
-                    description: document.querySelector("firstLevelDescription").value,
+                    description: document.querySelector("#firstLevelDescription").value,
                 },
                 sixthLevel: {
                     name: document.querySelector("#sixthLevelName").value,
-                    description: document.querySelector("sixthLevelDescription").value,
+                    description: document.querySelector("#sixthLevelDescription").value,
                 }, 
                 twelfthLevel: {
                     name: document.querySelector("#twelfthLevelName").value,
-                    description: document.querySelector("twelfthLevelDescription").value,
+                    description: document.querySelector("#twelfthLevelDescription").value,
                 },
                 eighteenthLevel: {
                     name: document.querySelector("#eighteenthLevelName").value,
-                    description: document.querySelector("eighteenthLevelDescription").value,
+                    description: document.querySelector("#eighteenthLevelDescription").value,
                 }
             })
         })
