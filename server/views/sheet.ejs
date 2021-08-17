@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/race.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <title>Races</title>
+</head>
+<body>
+   
+        <p>Enter your search paramaters in the corresponding search field for ease of use in-game, OR if race is missing, fill out the form to add it to the database.</p>
+        <div class="form-wrapper">  
+        <form method="GET">
+                <label for="findRace">Search for Race by Name:</label>
+                <input type="text" id="findRace" name="findRace">
+                <input type="submit" class="submit">
+           </form>
+        </div> 
+        <h1>Races</h1>
+        <ul>
+            <% races.forEach( el => { %>
+                <li class="race" data-id='<%=el._id%>'>
+                    <div class="column">
+                        <div class="row">
+                            <span class="races-label">Race:</span>
+                            <span><%= el.race %></span>
+                        </div>
+                        <div class="row">
+                            <span class="races-label">Ability Modifiers:</span> 
+                            <span><%= el.abilityModifiers %></span>
+                        </div>
+                        <div class="row">
+                            <span class="races-label">Hit Points:</span>
+                            <span><%= el.hitPoints %></span>
+                        </div>
+                        <div class="row">
+                            <h3>Traits</h3>
+                            <% el.traits.forEach( trait => { %>
+                                <div class="row">
+                                <span class="trait-name races-label">Name:</span>
+                                <span><%= trait.name %></span>
+                            </div>
+                            <div class="row">
+                                <span class="trait-description races-label">Description:</span>
+                                <span><%= trait.description %></span>
+                            </div>
+                                <% }) %>                    
+                        </div>
+                        <div class="row">
+                            <h3>Alternate Ability Adjustments</h3>
+                            <% el.alternateAbilityAdjustments.forEach ( ability => { %>
+                                <div class="row">
+                                    <span class="ability-name races-label">Name:</span>
+                                    <span><%= ability.name %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="ability-description races-label">Description:</span>
+                                    <span><%= ability.description %></span>
+                                </div>
+                            <% }) %>
+                        </div>
+                        <div class="row">
+                            <h3>Alternate Racial Traits</h3>
+                            <% el.alternateTraits.forEach ( alternateTrait => { %>
+                                <div class="row">
+                                    <span class="alternateTrait-name races-label">Name:</span>
+                                    <span><%= alternateTrait.name %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="alternateTrait-description races-label">Description:</span>
+                                    <span><%= alternateTrait.description %></span>
+                                </div>
+                            <% }) %>
+                        </div>
+                    </div>
+                </li>
+           <% }) %>
+        </ul>
+        <div class="form-wrapper bottom">
+            <h2>Create a Race</h2>
+            <form id="raceForm">
+                
+                <div class="form-column">
+                
+                    <div class="form-row">
+                        <label for="raceName">Race:</label>
+                        <input type="text" id="raceName" name="raceName">
+                    </div>
+                    <div class="form-row">
+                        <label for="abilityModifiers">Ability Modifiers:</label>
+                        <input type="text" id="abilityModifiers" name="abilityModifiers">
+                    </div>
+                    <div class="form-row">
+                        <label for="hitPoints">Hit Points:</label>
+                        <input type="number" id="hitPoints" name="hitPoints">
+                    </div>
+                    <div>
+                        <h3>Add Traits</h3>
+                        <ul id="traitList">
+                
+                        </ul>
+                        <div class="form-row">
+                            <label for="traitName">Name:</label>
+                            <input type="text" id="traitName">
+                        </div>
+                        <div class="form-row">
+                            <label for="traitDescription">Description:</label>
+                            <textarea id="traitDescription" cols="30" rows="4"></textarea>
+                        </div>
+                        <button type="button" class="submit" id="addTrait">Add Trait</button>
+                    </div>
+                    <div>
+                        <h3>Add Alternate Ability Adjustments</h3>
+                        <ul id="alternateAbilityList">
+                
+                        </ul>
+                        <div class="form-row">
+                            <label for="alternateAbilityName">Name:</label>
+                            <input type="text" id="alternateAbilityName">
+                        </div>
+                        <div class="form-row">
+                            <label for="alternateAbilityDescription">Description:</label>
+                            <textarea id="alternateAbilityDescription" cols="30" rows="4"></textarea>
+                        </div>
+                        <button type="button" class="submit" id="addAlternateAbility">Add Alternate Ability Adjustment</button>
+                    </div>
+                    <div>
+                        <h3>Add Alternate Traits</h3>
+                        <ul id="alternateTraitList">
+                
+                        </ul>
+                        <div class="form-row">
+                            <label for="alternateTraitName">Name:</label>
+                            <input type="text" id="alternateTraitName">
+                        </div>
+                        <div class="form-row">
+                            <label for="alternateTraitDescription">Description:</label>
+                            <textarea id="alternateTraitDescription" cols="30" rows="4"></textarea>
+                        </div>
+                        <button type="button" class="submit" id="addAlternateTrait">Add Alternate Trait</button>
+                    </div>
+                        <button class="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    <script src="/js/race.js"></script> 
+</body>
+</html>
