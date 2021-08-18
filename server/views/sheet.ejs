@@ -8,71 +8,505 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
-    <title>Races</title>
+    <title>Character Sheets</title>
 </head>
 <body>
    
         <p>Enter your search paramaters in the corresponding search field for ease of use in-game, OR if race is missing, fill out the form to add it to the database.</p>
         <div class="form-wrapper">  
         <form method="GET">
-                <label for="findRace">Search for Race by Name:</label>
-                <input type="text" id="findRace" name="findRace">
+                <label for="findSheet">Search for Character by Name:</label>
+                <input type="text" id="findSheet" name="findSheet">
                 <input type="submit" class="submit">
            </form>
         </div> 
-        <h1>Races</h1>
+        <h1>Character Sheets</h1>
         <ul>
-            <% races.forEach( el => { %>
-                <li class="race" data-id='<%=el._id%>'>
+            <h3% sheets.forEach( el => { %>
+                <li class="sheet" data-id='<%=el._id%>'>
                     <div class="column">
                         <div class="row">
-                            <span class="races-label">Race:</span>
+                            <h3 class="sheets-label">Character Name:</h3>
+                            <span><%= el.name %></span>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">Class:</span> 
+                            <span><%= el.class %></span>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">Level:</span>
+                            <span><%= el.level %></span>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">Race:</span>
                             <span><%= el.race %></span>
                         </div>
                         <div class="row">
-                            <span class="races-label">Ability Modifiers:</span> 
-                            <span><%= el.abilityModifiers %></span>
+                            <span class="sheets-label">Theme:</span>
+                            <span><%= el.theme %></span>
                         </div>
                         <div class="row">
-                            <span class="races-label">Hit Points:</span>
-                            <span><%= el.hitPoints %></span>
+                            <span class="sheets-label">Size:</span>
+                            <span><%= el.size %></span>
                         </div>
                         <div class="row">
-                            <h3>Traits</h3>
-                            <% el.traits.forEach( trait => { %>
+                            <span class="sheets-label">Speed:</span>
+                            <span><%= el.speed %></span>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">Gender:</span>
+                            <span><%= el.gender %></span>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">Home World:</span>
+                            <span><%= el.homeWorld %></span>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">Alignment:</span>
+                            <span><%= el.alignment %></span>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">Deity:</span>
+                            <span><%= el.deity %></span>
+                        </div>
+                        <div class="row">
+                            <h3 class="sheets-label">Description:</h3>
+                            <span><%= el.description %></span>
+                        </div>
+                        <div class="row">
+                            <h3>Ability Scores</h3>
+                            <span class="sheets-label">STR:</span>
+                            <span class="sheets-label">Score:</span>
+                            <span><%= el.abilityScores.strength.score %></span>
+                            <span class="sheets-label">Modifier:</span>
+                            <span><%= el.abilityScores.strength.modifier %></span>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">DEX:</span>
+                            <span class="sheets-label">Score:</span>
+                            <span><%= el.abilityScores.dexterity.score %></span>
+                            <span class="sheets-label">Modifier:</span>
+                            <span><%= el.abilityScores.dexterity.modifier %></span>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">CON:</span>
+                            <span class="sheets-label">Score:</span>
+                            <span><%= el.abilityScores.constitution.score %></span>
+                            <span class="sheets-label">Modifier:</span>
+                            <span><%= el.abilityScores.constitution.modifier %></span>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">INT:</span>
+                            <span class="sheets-label">Score:</span>
+                            <span><%= el.abilityScores.intelligence.score %></span>
+                            <span class="sheets-label">Modifier:</span>
+                            <span><%= el.abilityScores.intelligence.modifier %></span>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">WIS:</span>
+                            <span class="sheets-label">Score:</span>
+                            <span><%= el.abilityScores.wisdom.score %></span>
+                            <span class="sheets-label">Modifier:</span>
+                            <span><%= el.abilityScores.wisdom.modifier %></span>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">CHA:</span>
+                            <span class="sheets-label">Score:</span>
+                            <span><%= el.abilityScores.charisma.score %></span>
+                            <span class="sheets-label">Modifier:</span>
+                            <span><%= el.abilityScores.charisma.modifier %></span>
+                        </div>
+                        <div class="row">
+                            <h3>Skills</h3>
+                            <% el.skills.forEach( skill => { %>
                                 <div class="row">
-                                <span class="trait-name races-label">Name:</span>
-                                <span><%= trait.name %></span>
+                                <span class="skill-name sheets-label">Name:</span>
+                                <span><%= skill.name %></span>
                             </div>
                             <div class="row">
-                                <span class="trait-description races-label">Description:</span>
-                                <span><%= trait.description %></span>
+                                <span class="skill-total sheets-label">Total:</span>
+                                <span><%= skill.total %></span>
+                            </div>
+                            <div class="row">
+                                <span class="skill-ranks sheets-label">Ranks:</span>
+                                <span><%= skill.ranks %></span>
+                            </div>
+                            <div class="row">
+                                <span class="skill-class-bonus sheets-label">Class Bonus:</span>
+                                <span><%= skill.classBonus %></span>
+                            </div>
+                            <div class="row">
+                                <span class="skill-ability-modifier sheets-label">Ability Modifier:</span>
+                                <span><%= skill.abilityModifier %></span>
+                            </div>
+                            <div class="row">
+                                <span class="skill-misc-modifier sheets-label">Misc. Modifier:</span>
+                                <span><%= skill.miscModifier %></span>
                             </div>
                                 <% }) %>                    
                         </div>
                         <div class="row">
-                            <h3>Alternate Ability Adjustments</h3>
-                            <% el.alternateAbilityAdjustments.forEach ( ability => { %>
+                            <span class="sheets-label">Skill Notes:</span>
+                            <span><%= el.skillNotes %></span>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="row">
+                            <h3 class="sheets-label">Initiative:</h3>
+                            <span class="sheets-label">Total:</span>
+                            <span><%= el.initiative.total %></span>
+                            <span class="sheets-label">DEX Modifier:</span>
+                            <span><%= el.initiative.dexModifier %></span>
+                            <span class="sheets-label">Misc. Modifier:</span>
+                            <span><%= el.initiative.miscModifier %></span>
+                        </div>
+                        <div class="row">
+                            <h3 class="sheets-label">Health and Resolve:</h3>
+                            <span class="sheets-label">Total:</span>
+                            <span class="sheets-label">Stamina Points:</span>
+                            <span><%= el.healthAndResolve.total.staminaPoints %></span>
+                            <span class="sheets-label">Hit Points:</span>
+                            <span><%= el.healthAndResolve.total.hitPoints %></span>
+                            <span class="sheets-label">Resolve Points:</span>
+                            <span><%= el.healthAndResolve.total.resolvePoints %></span>
+                            <span class="sheets-label">Current:</span>
+                            <span class="sheets-label">Stamina Points:</span>
+                            <span><%= el.healthAndResolve.current.staminaPoints %></span>
+                            <span class="sheets-label">Hit Points:</span>
+                            <span><%= el.healthAndResolve.current.hitPoints %></span>
+                            <span class="sheets-label">Resolve Points:</span>
+                            <span><%= el.healthAndResolve.current.resolvePoints %></span>
+                        </div>
+                        <div class="row">
+                            <h3 class="sheets-label">Armor Class:</h3>
+                            <span class="sheets-label">EAC - Energy Armor Class:</span>
+                            <span class="sheets-label">Total:</span>
+                            <span><%= el.armorClass.energyArmorClass.total %></span>
+                            <span class="sheets-label">Armor Bonus:</span>
+                            <span><%= el.armorClass.energyArmorClass.armorBonus %></span>
+                            <span class="sheets-label">Dexterity Modifier:</span>
+                            <span><%= el.armorClass.energyArmorClass.dexModifier %></span>
+                            <span class="sheets-label">Misc. Modifier:</span>
+                            <span><%= el.armorClass.energyArmorClass.miscModifier %></span>
+                            <span class="sheets-label">KAC - Kinetic Armor Class:</span>
+                            <span class="sheets-label">Total:</span>
+                            <span><%= el.armorClass.kineticArmorClass.total %></span>
+                            <span class="sheets-label">Armor Bonus:</span>
+                            <span><%= el.armorClass.kineticArmorClass.armorBonus %></span>
+                            <span class="sheets-label">Dexterity Modifier:</span>
+                            <span><%= el.armorClass.kineticArmorClass.dexModifier %></span>
+                            <span class="sheets-label">Misc. Modifier:</span>
+                            <span><%= el.armorClass.kineticArmorClass.miscModifier %></span>
+                        </div>
+                        <div class="row">
+                            <h3 class="sheets-label">Saving Throws:</h3>
+                            <span class="sheets-label">Fortitude - CON:</span>
+                            <span class="sheets-label">Total:</span>
+                            <span><%= el.savingThrows.fortitude.total %></span>
+                            <span class="sheets-label">Base Save:</span>
+                            <span><%= el.savingThrows.fortitude.baseSave %></span>
+                            <span class="sheets-label">Ability Modifier:</span>
+                            <span><%= el.savingThrows.fortitude.abilityModifier %></span>
+                            <span class="sheets-label">Misc. Modifier:</span>
+                            <span><%= el.savingThrows.fortitude.miscModifier %></span>
+                            <span class="sheets-label">Reflex - DEX:</span>
+                            <span class="sheets-label">Total:</span>
+                            <span><%= el.savingThrows.reflex.total %></span>
+                            <span class="sheets-label">Base Save:</span>
+                            <span><%= el.savingThrows.reflex.baseSave %></span>
+                            <span class="sheets-label">Ability Modifier:</span>
+                            <span><%= el.savingThrows.reflex.abilityModifier %></span>
+                            <span class="sheets-label">Misc. Modifier:</span>
+                            <span><%= el.savingThrows.reflex.miscModifier %></span>
+                            <span class="sheets-label">Will - WIS:</span>
+                            <span class="sheets-label">Total:</span>
+                            <span><%= el.savingThrows.will.total %></span>
+                            <span class="sheets-label">Base Save:</span>
+                            <span><%= el.savingThrows.will.baseSave %></span>
+                            <span class="sheets-label">Ability Modifier:</span>
+                            <span><%= el.savingThrows.will.abilityModifier %></span>
+                            <span class="sheets-label">Misc. Modifier:</span>
+                            <span><%= el.savingThrows.will.miscModifier %></span>
+                        </div>
+                        <div class="row">
+                            <h3 class="sheets-label">Attack Bonuses:</h3>
+                            <span class="sheets-label">Melee:</span>
+                            <span class="sheets-label">Total:</span>
+                            <span><%= el.attackBonuses.melee.total %></span>
+                            <span class="sheets-label">Base Attack Bonus:</span>
+                            <span><%= el.attackBonuses.melee.baseAttackBonus %></span>
+                            <span class="sheets-label">Strength Modifier:</span>
+                            <span><%= el.attackBonuses.melee.abilityModifier %></span>
+                            <span class="sheets-label">Misc. Modifier:</span>
+                            <span><%= el.attackBonuses.melee.miscModifier %></span>
+                            <span class="sheets-label">Ranged:</span>
+                            <span class="sheets-label">Total:</span>
+                            <span><%= el.attackBonuses.ranged.total %></span>
+                            <span class="sheets-label">Base Attack Bonus:</span>
+                            <span><%= el.attackBonuses.ranged.baseAttackBonus %></span>
+                            <span class="sheets-label">Strength Modifier:</span>
+                            <span><%= el.attackBonuses.ranged.abilityModifier %></span>
+                            <span class="sheets-label">Misc. Modifier:</span>
+                            <span><%= el.attackBonuses.ranged.miscModifier %></span>
+                            <span class="sheets-label">Thrown:</span>
+                            <span class="sheets-label">Total:</span>
+                            <span><%= el.attackBonuses.thrown.total %></span>
+                            <span class="sheets-label">Base Attack Bonus:</span>
+                            <span><%= el.attackBonuses.thrown.baseAttackBonus %></span>
+                            <span class="sheets-label">Strength Modifier:</span>
+                            <span><%= el.attackBonuses.thrown.abilityModifier %></span>
+                            <span class="sheets-label">Misc. Modifier:</span>
+                            <span><%= el.attackBonuses.thrown.miscModifier %></span>
+                        </div>
+                        <div class="row">
+                            <h3>Weapons</h3>
+                            <% el.weapons.forEach ( weapon => { %>
                                 <div class="row">
-                                    <span class="ability-name races-label">Name:</span>
+                                    <span class="weapon-name sheets-label">Weapon:</span>
+                                    <span><%= weapon.weapon %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="weapon-level sheets-label">Level:</span>
+                                    <span><%= weapon.level %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="weapon-attack-bonus sheets-label">Attack Bonus:</span>
+                                    <span><%= weapon.attackBonus %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="weapon-damage sheets-label">Damage:</span>
+                                    <span><%= weapon.damage %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="weapon-critical sheets-label">Critical:</span>
+                                    <span><%= weapon.critical %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="weapon-range sheets-label">Range:</span>
+                                    <span><%= weapon.range %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="weapon-type sheets-label">Type:</span>
+                                    <span><%= weapon.type %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="weapon-ammo sheets-label">Ammo:</span>
+                                    <span><%= weapon.ammo %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="weapon-special sheets-label">Special:</span>
+                                    <span><%= weapon.special %></span>
+                                </div>
+                            <% }) %>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="row">
+                            <h3>Abilities</h3>
+                            <% el.abilities.forEach ( ability => { %>
+                                <div class="row">
+                                    <span class="ability-name sheets-label">Name:</span>
                                     <span><%= ability.name %></span>
                                 </div>
                                 <div class="row">
-                                    <span class="ability-description races-label">Description:</span>
+                                    <span class="ability-description sheets-label">Description:</span>
                                     <span><%= ability.description %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="ability-notes sheets-label">Notes:</span>
+                                    <span><%= ability.notes %></span>
                                 </div>
                             <% }) %>
                         </div>
                         <div class="row">
-                            <h3>Alternate Racial Traits</h3>
-                            <% el.alternateTraits.forEach ( alternateTrait => { %>
+                            <h3>Feats and Proficiencies</h3>
+                            <% el.featsAndProficiencies.forEach ( feat => { %>
                                 <div class="row">
-                                    <span class="alternateTrait-name races-label">Name:</span>
-                                    <span><%= alternateTrait.name %></span>
+                                    <span class="feat-name sheets-label">Name:</span>
+                                    <span><%= feat.name %></span>
                                 </div>
                                 <div class="row">
-                                    <span class="alternateTrait-description races-label">Description:</span>
-                                    <span><%= alternateTrait.description %></span>
+                                    <span class="feat-description sheets-label">Description:</span>
+                                    <span><%= feat.description %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="feat-notes sheets-label">Notes:</span>
+                                    <span><%= feat.notes %></span>
+                                </div>
+                            <% }) %>
+                        </div>
+                        <div class="row">
+                            <h3>Languages:</h3>
+                            <span><%= el.languages %></span>
+                        </div>
+                        <div class="row">
+                            <h3>Equipment</h3>
+                            <% el.equipment.forEach ( item => { %>
+                                <div class="row">
+                                    <span class="item-name sheets-label">Name:</span>
+                                    <span><%= item.name %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="item-level sheets-label">Level:</span>
+                                    <span><%= item.level %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="item-bulk sheets-label">Bulk:</span>
+                                    <span><%= item.bulk %></span>
+                                </div>
+                            <% }) %>
+                            <span class="sheets-label">Credits:</span>
+                            <span><%= el.credits %></span>
+                            <span class="sheets-label">Total Bulk:</span>
+                            <span><%= el.totalBulk %></span>
+                            <span class="sheets-label">Other Wealth:</span>
+                            <span><%= el.otherWealth %></span>
+                        </div>
+                        <div class="row">
+                            <h3>Carrying Capacity:</h3>
+                            <span class="sheets-label">Unencumbered:</span>
+                            <span><%= el.carryingCapacity.unencumbered %></span>
+                            <span class="sheets-label">Encumbered:</span>
+                            <span><%= el.carryingCapacity.encumbered %></span>
+                            <span class="sheets-label">Overburdened:</span>
+                            <span><%= el.carryingCapacity.overburdened %></span>
+                        </div>
+                        <div class="row">
+                            <h3>Experience Points:</h3>
+                            <span class="sheets-label">Current:</span>
+                            <span><%= el.experiencePoints.current %></span>
+                            <span class="sheets-label">Next Level:</span>
+                            <span><%= el.experiencePoints.nextLevel %></span>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="row">
+                            <h3>Spells Known:</h3>
+                            <span class="sheets-label">Level 0:</span>
+                            <span class="sheets-label">Spells Known:</span>
+                            <span><%= el.spells.zero.spellsKnown %></span>
+                            <% el.spells.zero.spells.forEach ( spell => { %>
+                                <div class="row">
+                                    <span class="spell-name sheets-label">Name:</span>
+                                    <span><%= spell.name %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="spell-description sheets-label">Description:</span>
+                                    <span><%= spell.description %></span>
+                                </div>
+                            <% }) %>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">Level 1:</span>
+                            <span class="sheets-label">Spells Known:</span>
+                            <span><%= el.spells.one.spellsKnown %></span>
+                            <span class="sheets-label">Spells Per Day:</span>
+                            <span><%= el.spells.one.spellsPerDay %></span>
+                            <span class="sheets-label">Spell Slots Used:</span>
+                            <span><%= el.spells.one.spellSlotsUsed %></span>
+                            <% el.spells.one.spells.forEach ( spell => { %>
+                                <div class="row">
+                                    <span class="spell-name sheets-label">Name:</span>
+                                    <span><%= spell.name %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="spell-description sheets-label">Description:</span>
+                                    <span><%= spell.description %></span>
+                                </div>
+                            <% }) %>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">Level 2:</span>
+                            <span class="sheets-label">Spells Known:</span>
+                            <span><%= el.spells.two.spellsKnown %></span>
+                            <span class="sheets-label">Spells Per Day:</span>
+                            <span><%= el.spells.two.spellsPerDay %></span>
+                            <span class="sheets-label">Spell Slots Used:</span>
+                            <span><%= el.spells.two.spellSlotsUsed %></span>
+                            <% el.spells.two.spells.forEach ( spell => { %>
+                                <div class="row">
+                                    <span class="spell-name sheets-label">Name:</span>
+                                    <span><%= spell.name %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="spell-description sheets-label">Description:</span>
+                                    <span><%= spell.description %></span>
+                                </div>
+                            <% }) %>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">Level 3:</span>
+                            <span class="sheets-label">Spells Known:</span>
+                            <span><%= el.spells.three.spellsKnown %></span>
+                            <span class="sheets-label">Spells Per Day:</span>
+                            <span><%= el.spells.three.spellsPerDay %></span>
+                            <span class="sheets-label">Spell Slots Used:</span>
+                            <span><%= el.spells.three.spellSlotsUsed %></span>
+                            <% el.spells.three.spells.forEach ( spell => { %>
+                                <div class="row">
+                                    <span class="spell-name sheets-label">Name:</span>
+                                    <span><%= spell.name %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="spell-description sheets-label">Description:</span>
+                                    <span><%= spell.description %></span>
+                                </div>
+                            <% }) %>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">Level 4:</span>
+                            <span class="sheets-label">Spells Known:</span>
+                            <span><%= el.spells.four.spellsKnown %></span>
+                            <span class="sheets-label">Spells Per Day:</span>
+                            <span><%= el.spells.four.spellsPerDay %></span>
+                            <span class="sheets-label">Spell Slots Used:</span>
+                            <span><%= el.spells.four.spellSlotsUsed %></span>
+                            <% el.spells.four.spells.forEach ( spell => { %>
+                                <div class="row">
+                                    <span class="spell-name sheets-label">Name:</span>
+                                    <span><%= spell.name %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="spell-description sheets-label">Description:</span>
+                                    <span><%= spell.description %></span>
+                                </div>
+                            <% }) %>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">Level 5:</span>
+                            <span class="sheets-label">Spells Known:</span>
+                            <span><%= el.spells.five.spellsKnown %></span>
+                            <span class="sheets-label">Spells Per Day:</span>
+                            <span><%= el.spells.five.spellsPerDay %></span>
+                            <span class="sheets-label">Spell Slots Used:</span>
+                            <span><%= el.spells.five.spellSlotsUsed %></span>
+                            <% el.spells.five.spells.forEach ( spell => { %>
+                                <div class="row">
+                                    <span class="spell-name sheets-label">Name:</span>
+                                    <span><%= spell.name %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="spell-description sheets-label">Description:</span>
+                                    <span><%= spell.description %></span>
+                                </div>
+                            <% }) %>
+                        </div>
+                        <div class="row">
+                            <span class="sheets-label">Level 6:</span>
+                            <span class="sheets-label">Spells Known:</span>
+                            <span><%= el.spells.six.spellsKnown %></span>
+                            <span class="sheets-label">Spells Per Day:</span>
+                            <span><%= el.spells.six.spellsPerDay %></span>
+                            <span class="sheets-label">Spell Slots Used:</span>
+                            <span><%= el.spells.six.spellSlotsUsed %></span>
+                            <% el.spells.six.spells.forEach ( spell => { %>
+                                <div class="row">
+                                    <span class="spell-name sheets-label">Name:</span>
+                                    <span><%= spell.name %></span>
+                                </div>
+                                <div class="row">
+                                    <span class="spell-description sheets-label">Description:</span>
+                                    <span><%= spell.description %></span>
                                 </div>
                             <% }) %>
                         </div>

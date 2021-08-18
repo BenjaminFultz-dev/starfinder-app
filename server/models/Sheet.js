@@ -181,8 +181,28 @@ const SheetSchema = new mongoose.Schema({
     languages: {
         type: String
     },
-    equipment: {
+    equipment: [{
+        name: String,
+        level: Number,
+        bulk: String
+    }],
+    credits: {
+        type: Number
+    },
+    totalBulk: {
+        type: Number
+    },
+    otherWealth: {
         type: String
+    },
+    carryingCapacity: {
+        unencumbered: Number,
+        encumbered: Number,
+        overburdened: Number
+    },
+    experiencePoints: {
+        current: Number,
+        nextLevel: Number
     },
     spells: {
         zero: {
